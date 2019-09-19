@@ -58,7 +58,7 @@ switch(new Date().getDay()) {
         break;
 }
 
-/*    ///////////////////////////////////////      HW #2    ///////////////////////////////////////    */
+/*    ///////////////////////////////////////      HW #3    ///////////////////////////////////////    */
 //Function Declaration
 let firstName = prompt("Name?")
 function greet(firstName = "John Doe") {
@@ -97,3 +97,34 @@ todo.delete = function() {
 
 todo.add()
 todo.edit("Epic")
+
+/*                                   HW #4                                  */
+//Global
+var a = 1
+let b = 2
+const c = 3
+function test() {
+	var a = 4
+	let b = 5
+	const c = 6
+	console.log('function scope', a, b, c) 
+}
+
+test() //Prints 4,5,6
+console.log('Global scope', a, b, c) //Prints 1,2,3
+
+//Block Scope
+if (true) {
+	var a = 7 //Var will change globally
+	let b = 8
+	const c = 9
+	console.log('If scope' d,e,f)
+	
+}
+console.log('Global scope', a, b, c) //Prints 7,2,3
+
+for (let a = 0; a<10; a++) {
+	console.log(`loop: ${a}`)
+}
+console.log('Global scope', a, b, c)
+ 
