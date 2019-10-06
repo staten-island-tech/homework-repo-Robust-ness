@@ -127,4 +127,17 @@ for (let a = 0; a<10; a++) {
 	console.log(`loop: ${a}`)
 }
 console.log('Global scope', a, b, c)
+
+//                          HW #7                          //
+//Wrong way
+var pizza = ['Regular', 'Hawaiian']
+var yes = pizza
+
+yes[0] = 'Not Regular' //The pizza array has been changed because yes only references the pizza array
+
+//Right Way
+var right = [1,2,3]
+yes = [...right]
+
+yes[0] = 2 //right arr hasn't changed this time
  
