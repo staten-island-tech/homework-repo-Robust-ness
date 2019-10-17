@@ -118,7 +118,7 @@ if (true) {
 	var a = 7 //Var will change globally
 	let b = 8
 	const c = 9
-	console.log('If scope' d,e,f)
+	//console.log(`If scope ${d,e,f}`)
 	
 }
 console.log('Global scope', a, b, c) //Prints 7,2,3
@@ -140,4 +140,32 @@ var right = [1,2,3]
 yes = [...right]
 
 yes[0] = 2 //right arr hasn't changed this time
+
+
+//HW 8
+const [bo,, bt] = [1,2,3] 
+console.log(bo, bt)
+
+
+let obj = {
+	name: 'Adam',
+	age: 17,
+	address: {
+		street: 'nope',
+		city: 'yes'
+	}
+}
+
+let obj2 = {
+	age: 15
+}
+
+let obj3 = {...obj, ...obj2}
+console.log(obj3)
+
+function epicfunction({name, age, food = 'what?'}) {
+	console.log(name, age, food)
+}
+
+epicfunction(obj)
  
