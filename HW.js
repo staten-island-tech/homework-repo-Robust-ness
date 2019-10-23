@@ -168,4 +168,28 @@ function epicfunction({name, age, food = 'what?'}) {
 }
 
 epicfunction(obj)
+
+
+//HW 9 Multiple Promises
+async function go() {
+	const p1 = fetch('https://api.github.com/users/wesbos').then(r => r.json())
+	const p2 = fetch('https://api.github.com/users/Robust-ness').then(r => r.json())
+	//Wait for both of them to come back
+	const [res1, res2] = await Promise.all([p1, p2])
+	console.log(res2)
+	//const dataPromises = res.map(r => r.json()) Alt. method to convert to json array
+	//const wesAndAdam = await Promise.all(dataPromises)
+	//console.log(wesAndAdam)
+}
+
+go()
+
+async function getData(names) {
+	const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(r => r.json()))
+	const [wes, robustness] = await Promise.all(promises)
+	console.log(wes, robustness)
+}
+
+getData(['westbos', 'Robust-ness'])
+
  
